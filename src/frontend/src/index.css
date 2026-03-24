@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Cream background */
+    --background: 0.98 0.015 85;
+    --foreground: 0.2 0.04 30;
+    /* Card: pure white-ish cream */
+    --card: 0.995 0.005 85;
+    --card-foreground: 0.2 0.04 30;
+    --popover: 0.995 0.005 85;
+    --popover-foreground: 0.2 0.04 30;
+    /* Primary: saffron #FF6B35 */
+    --primary: 0.68 0.19 35;
+    --primary-foreground: 0.99 0 0;
+    /* Secondary: gold #FFD700 */
+    --secondary: 0.88 0.17 88;
+    --secondary-foreground: 0.2 0.04 30;
+    /* Muted */
+    --muted: 0.94 0.01 80;
+    --muted-foreground: 0.5 0.03 30;
+    /* Accent: maroon #800000 */
+    --accent: 0.35 0.14 19;
+    --accent-foreground: 0.99 0 0;
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    /* Border/input */
+    --border: 0.88 0.03 75;
+    --input: 0.88 0.03 75;
+    --ring: 0.68 0.19 35;
+    /* Charts */
+    --chart-1: 0.68 0.19 35;
+    --chart-2: 0.88 0.17 88;
+    --chart-3: 0.35 0.14 19;
+    --chart-4: 0.6 0.12 60;
+    --chart-5: 0.75 0.15 50;
+    /* Sidebar */
+    --sidebar: 0.35 0.14 19;
+    --sidebar-foreground: 0.99 0 0;
+    --sidebar-primary: 0.68 0.19 35;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.88 0.17 88;
+    --sidebar-accent-foreground: 0.2 0.04 30;
+    --sidebar-border: 0.3 0.1 19;
+    --sidebar-ring: 0.68 0.19 35;
+    /* Temple-specific tokens */
+    --saffron: 0.68 0.19 35;
+    --gold: 0.88 0.17 88;
+    --maroon: 0.35 0.14 19;
+    --temple-cream: 0.98 0.015 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .text-saffron {
+    color: oklch(var(--saffron));
+  }
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .text-maroon {
+    color: oklch(var(--maroon));
+  }
+  .bg-saffron {
+    background-color: oklch(var(--saffron));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .bg-maroon {
+    background-color: oklch(var(--maroon));
+  }
+  .bg-temple-cream {
+    background-color: oklch(var(--temple-cream));
+  }
+  .border-saffron {
+    border-color: oklch(var(--saffron));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .border-maroon {
+    border-color: oklch(var(--maroon));
+  }
+  .gradient-temple {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--saffron)),
+      oklch(var(--maroon))
+    );
+  }
+  .gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--gold)),
+      oklch(var(--saffron))
+    );
+  }
+  .om-decoration::before {
+    content: "ॐ";
+    opacity: 0.08;
+    font-size: 8rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Playfair Display", serif;
+  }
+}
